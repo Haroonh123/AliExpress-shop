@@ -1,101 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AliExpress Dashboard</title>
-<style>
-  body {
-    background-color: #ff6600;
-    font-family: Arial, sans-serif;
-    color: white;
-    margin: 0; padding: 20px;
-  }
-  header {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  header h1 {
-    margin: 0;
-  }
-  .section {
-    background: #fff3e0;
-    color: #cc5200;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .section h2 {
-    margin-top: 0;
-  }
-  .btn {
-    background-color: #cc5200;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  .wallet-info {
-    margin-top: 15px;
-  }
-  .wallet-info p {
-    margin: 8px 0;
-    font-weight: bold;
-  }
-  img.qr {
-    max-width: 200px;
-    border-radius: 10px;
-    margin-top: 10px;
-  }
-  a.contact-link {
-    color: #cc5200;
-    font-weight: bold;
-    text-decoration: none;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AliExpress - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff3e0;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff6f00;
+    }
+    .wallet-box, .fake-transactions, .contact {
+      background: #ffe0b2;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+    button {
+      background-color: #ff9800;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .qr {
+      width: 120px;
+      margin-top: 10px;
+    }
+    .transactions table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .transactions th, .transactions td {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+    }
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+    .contact img {
+      width: 24px;
+      margin-right: 8px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>AliExpress Dashboard</h1>
-</header>
+  <h1>Welcome to AliExpress Dashboard</h1>
 
-<div class="section">
-  <h2>Recharge / Deposit</h2>
-  <p>Deposit Wallet Address:</p>
-  <p class="wallet-info">TLdHhSyHgi8kMTY1Uh9Fb1SPP4fxWJjmb8</p>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?data=TLdHhSyHgi8kMTY1Uh9Fb1SPP4fxWJjmb8&size=150x150" alt="Deposit QR Code" class="qr" />
-</div>
-
-<div class="section">
-  <h2>Withdraw</h2>
-  <p>To withdraw, please contact the support team below.</p>
-</div>
-
-<div class="section">
-  <h2>Contact Center</h2>
-  <button onclick="toggleContact()" class="btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:20px; vertical-align:middle; margin-right:8px;" /> WhatsApp
-  </button>
-  <button onclick="toggleContact()" class="btn" style="background-color:#0088cc;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" style="width:20px; vertical-align:middle; margin-right:8px;" /> Telegram
-  </button>
-
-  <div id="contactInfo" style="display:none; margin-top:15px; background:#fff3e0; color:#cc5200; padding:10px; border-radius:5px; border:1px solid #ff6f00;">
-    <p>WhatsApp: <a href="https://wa.me/12897695312" target="_blank" class="contact-link">+1 (289) 769-5312</a></p>
-    <p>Telegram: <a href="https://t.me/lrina4547" target="_blank" class="contact-link">@lrina4547</a></p>
+  <div class="wallet-box">
+    <h2>Deposit Wallet</h2>
+    <p><strong>TRC20 Wallet Address:</strong> TLdHhSyHgi8kMTY5Uh9Fb1SPP4fxWJjmb8</p>
+    <img class="qr" src="your-qr-code-link.png" alt="QR Code" />
+    <div>
+      <button>Deposit</button>
+      <button>Withdraw</button>
+    </div>
   </div>
-</div>
 
-<script>
-  function toggleContact() {
-    const div = document.getElementById('contactInfo');
-    div.style.display = (div.style.display === 'block') ? 'none' : 'block';
-  }
-</script>
+  <div class="fake-transactions transactions">
+    <h2>Recent Transactions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2024-05-01</td><td>Deposit</td><td>$100</td><td>Completed</td></tr>
+        <tr><td>2024-05-02</td><td>Withdraw</td><td>$30</td><td>Pending</td></tr>
+        <tr><td>2024-05-03</td><td>Deposit</td><td>$50</td><td>Completed</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="contact">
+    <h2>Contact Center</h2>
+    <a href="https://wa.me/12897695312" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> WhatsApp
+    </a>
+    <a href="https://t.me/lrina4547" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"> Telegram
+    </a>
+  </div>
 
 </body>
 </html>
