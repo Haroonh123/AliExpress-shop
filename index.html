@@ -1,41 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AliExpress Registration & Dashboard</title>
-  <style>
-    body { background: orange; font-family: Arial, sans-serif; padding: 20px; color: #fff; }
-    .container { max-width: 400px; margin: auto; background: #fff; color: #000; padding: 20px; border-radius: 8px; }
-    input, button { width: 100%; padding: 10px; margin: 10px 0; }
-    button { background: #333; color: white; border: none; cursor: pointer; }
-    #dashboard { display: none; }
-    h1, h2 { text-align: center; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Platform</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #fff3e0; 
+            margin: 0; 
+            padding: 20px;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            background: white; 
+            padding: 20px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .warning { 
+            color: #d32f2f; 
+            background: #ffebee; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 5px;
+        }
+        .section { 
+            border: 2px solid #ffa500; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 8px;
+        }
+        h1 { color: #ffa500; text-align: center; }
+        a { color: #ffa500; text-decoration: none; }
+        button { 
+            background: #ffa500; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+        .qr-code { 
+            width: 150px; 
+            margin: 10px 0; 
+            border: 2px solid #ffa500;
+        }
+    </style>
 </head>
 <body>
-  <div id="registerPage" class="container">
-    <h2>AliExpress Register</h2>
-    <form id="registerForm">
-      <input type="text" name="phone" placeholder="Phone Number" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Register</button>
-    </form>
-  </div>
+    <div class="container">
+        <!-- Header Section -->
+        <h1>Orange Crypto Platform</h1>
+        
+        <!-- Compliance Warning -->
+        <div class="warning">
+            ⚠️ Important: Complete KYC verification for withdrawals. Never share private keys.
+        </div>
 
-  <div id="dashboard" class="container">
-    <h1>Welcome to AliExpress Dashboard</h1>
-    <p>آپ کی رجسٹریشن کامیاب ہو گئی ہے۔</p>
-    <p>یہاں آپ کا ڈیش بورڈ ہوگا جہاں یوزرز ٹاسک کر سکتے ہیں اور رقم جمع کر سکتے ہیں۔</p>
-  </div>
+        <!-- Login/Register -->
+        <div class="section">
+            <h2>Account</h2>
+            <form>
+                <input type="email" placeholder="Email" required><br><br>
+                <input type="password" placeholder="Password" required><br><br>
+                <button type="submit">Login/Register</button>
+            </form>
+        </div>
 
-  <script>
-    document.getElementById('registerForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      document.getElementById('registerPage').style.display = 'none';
-      document.getElementById('dashboard').style.display = 'block';
-    });
-  </script>
+        <!-- Dashboard -->
+        <div class="section">
+            <h2>Account Overview</h2>
+            <p>Balance: $<span id="balance">0.00</span></p>
+            <p>Commission: 3% per deposit (10% after 2 deposits)</p>
+        </div>
+
+        <!-- Deposit Section -->
+        <div class="section">
+            <h2>Deposit (TRC20 Only)</h2>
+            <p>Minimum Deposit: $50</p>
+            <p>Wallet Address: <code>TLdHhSyHgi8kMTY1Uh9Fb1SPP4fxWJjmb8</code></p>
+            <img src="placeholder_qr.png" alt="TRC20 QR" class="qr-code">
+            <form>
+                <input type="number" min="50" placeholder="Amount ($)" required>
+                <button type="submit">Confirm Deposit</button>
+            </form>
+        </div>
+
+        <!-- Withdrawal Section -->
+        <div class="section">
+            <h2>Withdraw Funds</h2>
+            <form>
+                <input type="text" placeholder="TRC20 Wallet Address" required><br><br>
+                <input type="number" min="10" placeholder="Amount ($)" required><br><br>
+                <button type="submit">Request Withdrawal</button>
+            </form>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="section">
+            <h2>24/7 Support</h2>
+            <p>📱 Telegram: 
+                <a href="https://t.me/coustomersupport5464" target="_blank">
+                    @coustomersupport5464
+                </a>
+            </p>
+            <p>📞 WhatsApp: 
+                <a href="https://wa.me/+12897695312" target="_blank">
+                    +1 (289) 769-5312
+                </a>
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="warning" style="text-align: center;">
+            ℹ️ This is a frontend demo. Real platform requires:
+            <ul style="text-align: left;">
+                <li>Backend integration</li>
+                <li>KYC verification system</li>
+                <li>Blockchain transaction processing</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
